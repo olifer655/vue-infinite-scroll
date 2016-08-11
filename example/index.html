@@ -1,59 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui, maximum-scale=1.0, minimum-scale=1.0">
-  <title>vue-swipe examples</title>
-  <link rel="stylesheet" href="/lib/vue-swipe.css" charset="utf-8">
-  <style>
-    .swipe {
-      height: 200px;
-      color: #fff;
-      font-size: 30px;
-      text-align: center;
-    }
-    .page1 {
-      background-color: #0089dc;
-      color: #fff;
-    }
-    .page2 {
-      background-color: #ffd705;
-      color: #000;
-    }
-    .page3 {
-      background-color: #ff2d4b;
-      color: #fff;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>vue-infinite-scroll</title>
 </head>
 <body>
-  <swipe :auto="2000">
-    <swipe-item class="page1">饿了么</swipe-item>
-    <swipe-item class="page2">美团</swipe-item>
-    <swipe-item class="page3">百度</swipe-item>
-  </swipe>
 
-  <br>
+<div class="app"
+     style="height: 1200px;background-color: #ccc;width: 400px;margin: 0 auto;"
+     v-infinite-scroll="loadMore()"
+     infinite-scroll-disabled="busy"
+     infinite-scroll-immediate-check="true">
+</div>
 
-  <swipe :speed="900" :auto="0" :show-indicators="true" :no-drag="true">
-    <swipe-item v-for="data in datas" style="color: #dedede;">
-      {{data.name}}
-    </swipe-item>
-  </swipe>
+<script src="https://cdn.css.net/libs/vue/1.0.10/vue.min.js"></script>
+<!-- <script type="text/javascript" src="https://npmcdn.com/vue-infinite-scroll"></script> -->
+<script type="text/javascript" src="/build.js"></script>
 
-  <br>
-
-  <swipe :speed="900" :auto="0" :show-indicators="false">
-    <swipe-item class="page1">SINGLE PAGE</swipe-item>
-  </swipe>
-
-  <swipe :speed="900" :auto="0" :show-indicators="false" :no-drag-when-single="false">
-    <swipe-item class="page2">SINGLE PAGE</swipe-item>
-  </swipe>
-
-  <script src="../node_modules/vue/dist/vue.js"></script>
-  <script src="/lib/vue-swipe.js"></script>
-  <script type="text/javascript" src="/example/dist/build.js"></script>
 </body>
 </html>

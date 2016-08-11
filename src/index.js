@@ -1,4 +1,3 @@
-import Swipe from './swipe.vue';
-import SwipeItem from './swipe-item.vue';
+import infiniteScroll from './vue-infinite-scroll.vue';
 
-export { Swipe, SwipeItem };
+export default infiniteScroll;
